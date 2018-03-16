@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <style type="text/css">
+body {
+    height: 920px;
+    min-height: 100%;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #2c2c2c;
+    line-height: 120%;
+    background-color: #f2f2f2;
+}
+      blockquote {
+        margin-bottom: 10px;
+        border-left-color: #bbb;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .row {
+        margin-left: 0px;
+        margin-top: 10px;
+        overflow: scroll;
+      }
+* {box-sizing: border-box;}
+
+header {
+    background: #FFFFFF;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 105;
+}
+
+header .inner-block {
+    background: #FFFFFF;
+    width: 1260px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: 120%;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.veolia-head {
+    float: right;
+}
+
+.veolia-contact-link a:hover, .veolia-social-hub a:hover, .veolia-search-link a:hover {
+    color: #808080;
+}
+
+.veolia-contact-link a, .veolia-social-hub a, .veolia-search-link a {
+    color: #2c2c2c;
+    margin-left: 8px;
+}
+
+.veolia-selected-region-item {
+    z-index: 1;
+    position: relative;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    font-family: FSRufus;
+    color: #ff0000;
+    margin: 0 -10px 0 0;
+    line-height: 30px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.veolia-select-region-link > a:hover {
+    color: #2c2c2c;
+}
+
+.navi {
+    z-index: 100;
+    position: relative;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 17px;
+    color: #fff;
+    height: 85px;
+    line-height: 120%;
+    background: #2c2c2c;
+    font-family: FSRufus,Georgia,"Times New Roman","Bitstream Vera Serif",serif;
+}
+
+select-region-link > a {
+    position: relative;
+    float: left;
+    display: block;
+    background: #e9e9ea;
+    padding: 0 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #808080;
+    -webkit-border-radius: 4px 0 4px 0;
+    -moz-border-radius: 4px 0 4px 0;
+    -ms-border-radius: 4px 0 4px 0;
+    -o-border-radius: 4px 0 4px 0;
+    border-radius: 4px 0 4px 0;
+    behavior: url(https://www.veolia.de/sites/all/themes/veo/css/pie.htc);
+    -ms-behavior: url(https://www.veolia.de/sites/all/themes/veo/css/css/pie.htc) url(https://www.veolia.de/sites/all/themes/veo/css/pie.htc);
+}
+
+.veolia-contact-link, .veolia-social-hub, .veolia-search-link {
+    float: left;
+    padding: 8px 0 0 0;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    color: #2c2c2c;
+    line-height: 120%;
+}
+
+.veolia-select-region-link {
+    float: left;
+    padding: 5px 30px 0 30px;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #808080;
+    text-decoration: none;
+}
+
+.leaf {
+    color: white;
+    text-decoration: none;
+}
+
+.leaf:hover {
+    color: #808080;
+    text-decoration: none;
+}
+
+#veolia-logo {
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat 0 -27px;
+    position: absolute;
+    top: 29px;
+    left: -8px;
+    height: 73px;
+}
+
+#veolia-logo:before {
+    content: ' ';
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat 0 0;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 16px;
+    overflow: hidden;
+}
+
+#veolia-logo:after {
+    content: ' ';
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat -20px 0;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 16px;
+    overflow: hidden;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.veolia-search-link a {
+    z-index: 1;
+    position: relative;
+    padding: 0 24px 0 0;
+    color: #ff0000;
+}
+
+.veolia-search-link a:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 23px;
+    height: 27px;
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) -90px -102px no-repeat;
+    left: auto;
+    right: 0;
+    top: -5px;
+}
+
+#veolia-logo .logo-320 {
+    display: none;
+}
+
+.veolia-contact-link a:first-child, .veolia-social-hub a:first-child, .veolia-search-link a:first-child {
+    margin-left: 0;
+}
+
+.navibar-inner {
+    z-index: 1;
+    position: relative;
+    width: 1260px;
+    margin: 0 auto;
+    min-height: 35px;
+}
+
+.navibar-inner > ul {
+    padding: 40px 0 10px 0;
+    display: block;
+    margin: 0;
+    float: right;
+}
+
+.navibar-inner > ul > li {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0 0 1px;
+    list-style-image: none;
+    float: left;
+}
+
+.navibar-inner > ul > li > a {
+    color: #ffffff;
+    padding: 20px;
+}
+
+.navibar-inner > ul > li > a:hover {
+    color: #9d9d9d;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.veolia-search-link {
+    padding: 8px 10px 0 30px;
+}
+
+.item-list ul li.leaf {
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+    padding: 10px;
+}
+
+footer {
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/bg-footer.png) repeat-x 0 0;
+    position: fixed;
+    height: 100px;
+    bottom: -61px;
+    width: 100%;
+}
+
+.item-list ul {
+    margin: 0;
+    padding: 0;
+}
+ul.menu {
+    border: none;
+    list-style: none;
+    text-align: left;
+}
+
+.item-list {
+    margin: 0;
+    padding: 0;
+}
+
+footer .item-list ul li {
+    float: left;
+    padding-right: 27px;
+}
+
+footer .copyright {
+    float: right;
+    font-weight: 400;
+    font-style: normal;
+    color: #808080;
+    padding: 10px;
+}
+
+/* Profile container */
+.profile {
+  margin: 0px 0;
+  float: left;
+  overflow: visible;
+  width: 280px;
+  height: 805px;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+  height: 805px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin-left: 70px;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+    </style>
+  </head>
+  <body>
+
+      <header class="">
+          <div class="inner-block">
+              <h1 style="display:none;"></h1>
+              <div id="veolia-logo">
+                  <a href="/"><img typeof="foaf:Image" src="https://www.veolia.de/sites/all/themes/veo/images/logo.png" alt=""><img class="logo-320" typeof="foaf:Image" src="https://www.veolia.de/sites/all/themes/veo/images/logo-320-old.png" alt=""></a>
+              </div>
+              <div class="veolia-head">
+                  <div class="veolia-selected-region-item">Germany</div>
+                  <div class="veolia-select-region-link __web-inspector-hide-shortcut__">
+                      <a href="#" class="veolia-sites"><span></span></a>
+                  </div>
+                  <div class="veolia-social-hub"><a href="http://livingcircular.veolia.com/en" target="_blank">#LivingCircular</a><a href="https://www.veolia.de/services/search" target="_blank">Standorte und Services</a></div><div class="veolia-search-link"><a href="#">Suche</a></div>
+              </div>
+          </div>
+      </header>
+   
+   <div class="navi">
+       <div class="navibar-inner">
+           <ul>
+               <li><a href="/" class="main-item active">Ueber uns</a></li>
+               <li><a href="/" class="main-item active">Unsere Leistungen</a></li>
+           </ul>
+       </div>
+
+   </div>
+
+      <div class="row profile">
+          <div class="col-md-3">
+              <div class="profile-sidebar">
+                  <!-- SIDEBAR USERPIC -->
+                  <div class="profile-userpic">
+                      <img src="https://lh3.googleusercontent.com/-tFaTKNOQPik/AAAAAAAAAAI/AAAAAAAAADA/FgZUrLc8fmY/s200-p-k-rw-no/photo.jpg" class="img-responsive" alt="">
+                  </div>
+                  <!-- END SIDEBAR USERPIC -->
+                  <!-- SIDEBAR USER TITLE -->
+                  <div class="profile-usertitle">
+                      <div class="profile-usertitle-name">
+                          Sinan Oeztuerk
+                      </div>
+                      <div class="profile-usertitle-job">
+                          Developer
+                      </div>
+                  </div>
+                  <!-- END SIDEBAR USER TITLE -->
+                  <!-- SIDEBAR BUTTONS -->
+                  <div class="profile-userbuttons">
+                      <a href="{{ url|safe }}">
+
+                          {% if url_linktext == 'Logout' -%}
+                          <i class="btn btn-danger btn-sm">{{ url_linktext }}</i>
+                          {% elif url_linktext == 'Login' %}
+                          <i class="btn btn-success btn-sm">{{ url_linktext }}</i>
+                          {% endif %}
+                      </a>
+
+                  </div>
+                  <!-- END SIDEBAR BUTTONS -->
+                  <!-- SIDEBAR MENU -->
+                  <div class="profile-usermenu">
+                      <ul class="nav">
+                          <li class="active">
+                              <a href="#">
+                                  <i class="glyphicon glyphicon-home"></i>
+                                 Administration
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <i class="glyphicon glyphicon-user"></i>
+                                  Globale Stammdaten
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#" target="_blank">
+                                  <i class="glyphicon glyphicon-ok"></i>
+                                  Facility Services
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <i class="glyphicon glyphicon-flag"></i>
+                                  Sonstiges
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+                  <!-- END MENU -->
+              </div>
+          </div>
+      </div>
+
+    <div class="container">
+
+      {% for greeting
+         in greetings %}
+      <div class="row">
+        {% if greeting.author %}
+          <b>{{ greeting.author.nickname() }}</b> schrieb:
+        {% else %}
+         Jemand schrieb:
+        {% endif %}
+        <blockquote>{{ greeting.content }}</blockquote>
+      </div>
+      {% endfor %}
+
+      <form action="/sign" method="post">
+        <div><textarea name="content" class="input-block-level" rows="3"></textarea></div>
+        <div><input type="submit" class="btn btn-large btn-primary" value="Absenden"></div>
+      </form>
+
+        </div>
+
+      <footer>
+          <div class="footi-inner">
+              <div class="item-list">
+                  <ul class="menu">
+                      <li class="leaf"><a href="/sitemap">Sitemap</a></li>
+                      <li class="leaf"><a href="/impressum">Impressum</a></li>
+                      <li class="leaf"><a href="http://www.veolia.de/geschaefts-und-einkaufsbedingungen-des-geschaeftsbereichs-entsorgung">AGB</a></li>
+                      <li class="leaf"><a href="/credits">Credits</a></li>
+                  </ul>
+              </div>
+              <div class="copyright">Copytight 2018 Veolia</div>
+          </div>
+        </footer>
+
+  </body>
+</html>
+{% endautoescape %}

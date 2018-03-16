@@ -1,0 +1,117 @@
+#veolia-logo {
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat 0 -27px;
+    position: absolute;
+    top: 29px;
+    left: -8px;
+    height: 73px;
+}
+
+ .veolia-head {
+    float: right;
+    margin-right: -180px;
+}
+
+.navibar-inner {
+    z-index: 1;
+    position: relative;
+    width: 1260px;
+    margin: 0 auto;
+    min-height: 35px;
+}
+
+.navibar-inner > ul {
+    padding: 40px 0 10px 0;
+    display: block;
+    margin: 0;
+    float: right;
+}
+
+.navibar-inner > ul > li {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0 0 1px;
+    list-style-image: none;
+    float: left;
+}
+
+.navibar-inner > ul > li > a {
+    color: #ffffff;
+    padding: 20px;
+}
+
+.navibar-inner > ul > li > a:hover {
+    color: #9d9d9d;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.navi {
+    z-index: 100;
+    position: relative;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 17px;
+    color: #fff;
+    height: 85px;
+    line-height: 120%;
+    background: #2c2c2c;
+    font-family: FSRufus,Georgia,"Times New Roman","Bitstream Vera Serif",serif;
+}
+
+#veolia-logo:before {
+    content: ' ';
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat 0 0;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 16px;
+    overflow: hidden;
+}
+
+#veolia-logo:after {
+    content: ' ';
+    background: url(https://www.veolia.de/sites/all/themes/veo/images/sprite.png) no-repeat -20px 0;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.headi {
+    background: #FFFFFF;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 105;
+}
+
+.headi .inner-block {
+    background: #FFFFFF;
+    width: 1260px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.veolia-selected-region-item {
+    z-index: 1;
+    position: relative;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    font-family: FSRufus;
+    color: #ff0000;
+    margin: 0 -10px 0 0;
+    line-height: 30px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.veolia-select-region-link > a:hover {
+    color: #2c2c2c;
+}
